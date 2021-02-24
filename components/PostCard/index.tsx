@@ -3,7 +3,7 @@ import Divider from "components/Divider";
 import { Post } from "components/Post/props";
 import React from "react";
 import moment from "moment";
-import { Tag } from "./components";
+import Tag from "components/Tag";
 
 const PostCard: React.FC<Post> = (props) => {
   const { owner, image, text, tags, likes, publishDate, id: postId } = props;
@@ -34,16 +34,16 @@ const PostCard: React.FC<Post> = (props) => {
       <Link href={`/post/${postId}`}>
         <a>
           <img className="w-full" src={image} alt={`${text} Image`} />
-          <article className="p-4">
+          <article className="pt-4 px-4">
             <h4 className="leading-4 mb-4">{text}</h4>
-            <div>
-              {tags.map((tag) => (
-                <Tag key={tag} text={tag} />
-              ))}
-            </div>
           </article>
         </a>
       </Link>
+      <div className="px-4 pb-4">
+        {tags.map((tag) => (
+          <Tag key={tag} text={tag} />
+        ))}
+      </div>
       <Divider />
       <div className="p-4 flex items-center">
         <img src="/like.svg" alt="Like Icon" />

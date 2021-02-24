@@ -2,7 +2,6 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import axios from "axios";
 import { Post } from "components/Post/props";
-import Divider from "components/Divider";
 import PostCard from "components/PostCard";
 
 type Props = {
