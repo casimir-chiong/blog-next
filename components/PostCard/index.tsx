@@ -1,19 +1,19 @@
 import Link from "next/link";
 import Divider from "components/Divider";
-import { PostProps } from "components/Post/props";
+import { Post } from "components/Post/props";
 import React from "react";
 import moment from "moment";
 import { Tag } from "./components";
 
-const PostCard: React.FC<PostProps> = (props) => {
+const PostCard: React.FC<Post> = (props) => {
   const { owner, image, text, tags, likes, publishDate, id: postId } = props;
   const { firstName, lastName, picture, id: userId } = owner;
   const fullName = `${firstName} ${lastName}`;
 
   return (
-    <li className="w-72 mb-6 bg-gray-50">
+    <li className="w-72 mb-6 bg-gray-50 list-none">
       <header className="p-4">
-        <Link href={`/profile/${userId}`}>
+        <Link href={`/user/${userId}`}>
           <a className="flex items-center">
             <img
               className="mr-2 w-12 h-12 object-contain rounded-full"
@@ -31,7 +31,7 @@ const PostCard: React.FC<PostProps> = (props) => {
           </a>
         </Link>
       </header>
-      <Link href={`/posts/${postId}`}>
+      <Link href={`/post/${postId}`}>
         <a>
           <img className="w-full" src={image} alt={`${text} Image`} />
           <article className="p-4">

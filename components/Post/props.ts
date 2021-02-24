@@ -1,6 +1,6 @@
-import { User } from "components/Profile/props";
+import { User } from "components/User/props";
 
-export type PostProps = {
+export type Post = {
   id: string;
   image: string;
   likes: 43;
